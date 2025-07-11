@@ -46,28 +46,9 @@ export default function Contact() {
 
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl font-serif mb-4">Visit Our Gallery</h2>
-                <p className="text-gray-600">
-                  123 Ceramic Lane<br />
-                  New York, NY 10001<br />
-                  United States
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-serif mb-4">Opening Hours</h2>
-                <p className="text-gray-600">
-                  Tuesday - Saturday: 10:00 AM - 6:00 PM<br />
-                  Sunday: 12:00 PM - 5:00 PM<br />
-                  Monday: Closed
-                </p>
-              </div>
-
-              <div>
                 <h2 className="text-2xl font-serif mb-4">Contact Information</h2>
                 <p className="text-gray-600">
-                  Phone: +1 (555) 123-4567<br />
-                  Email: info@rikuceramics.com
+                  Email: riku@rikuceramics.com
                 </p>
               </div>
             </div>
