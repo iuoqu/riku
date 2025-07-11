@@ -1,0 +1,12 @@
+This directory contains placeholder images for the RiKU Ceramics website.
+
+Required images:
+1. hero.jpg - Hero image for the homepage
+2. vase-1.jpg - Ethereal Vase Collection image
+3. tea-set-1.jpg - Traditional Tea Set image
+4. sculpture-1.jpg - Abstract Form I image
+5. plates-1.jpg - Dining Collection image
+6. workshop.jpg - Workshop/studio image
+7. gallery.jpg - Gallery interior image
+
+Please replace these placeholder images with actual high-quality photographs of your ceramics and gallery space. 
