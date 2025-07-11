@@ -1,0 +1,11 @@
+PLACEHOLDER IMAGE REQUIRED
+
+Category: Tea Cup Sets
+Required Image Specs:
+- Complete set arrangement
+- Individual cup and saucer details
+- Pattern/design close-ups
+- White/light gray background
+- Min resolution: 2000x2000px
+
+Filename should be: tea-set-1.jpg, tea-set-2.jpg, etc. 

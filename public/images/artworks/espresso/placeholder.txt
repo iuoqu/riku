@@ -1,0 +1,11 @@
+PLACEHOLDER IMAGE REQUIRED
+
+Category: Espresso Cups
+Required Image Specs:
+- Cup with saucer at 45-degree angle
+- Set arrangement (if multiple pieces)
+- Handle and rim details
+- White/light gray background
+- Min resolution: 2000x2000px
+
+Filename should be: espresso-1.jpg, espresso-2.jpg, etc. 

@@ -1,0 +1,11 @@
+PLACEHOLDER IMAGE REQUIRED
+
+Category: Coffee Mugs
+Required Image Specs:
+- Primary angle: 45-degree view
+- Show handle and design clearly
+- Dimensions in frame
+- White/light gray background
+- Min resolution: 2000x2000px
+
+Filename should be: mug-1.jpg, mug-2.jpg, etc. 

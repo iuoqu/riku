@@ -1,0 +1,11 @@
+PLACEHOLDER IMAGE REQUIRED
+
+Category: Decoration
+Required Image Specs:
+- Front view with neutral background
+- Multiple angles showing dimension
+- Texture and surface details
+- Installation/display suggestion
+- Min resolution: 2000x2000px
+
+Filename should be: decor-1.jpg, decor-2.jpg, etc. 
