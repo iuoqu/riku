@@ -1,13 +1,22 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import artworksData from '@/data/artworks.json';
 import siteContent from '@/data/siteContent.json';
 
 export default function Home() {
+  const [imageError, setImageError] = useState<Record<string, boolean>>({});
+
   // Get featured works from JSON data
   const featuredWorks = artworksData
     .filter(artwork => artwork.featured)
     .slice(0, siteContent.featuredSection.showCount);
+
+  const handleImageError = (id: string) => {
+    setImageError(prev => ({ ...prev, [id]: true }));
+  };
 
   return (
     <div>
@@ -19,9 +28,10 @@ export default function Home() {
             alt="RiKU Ceramics Hero"
             fill
             sizes="100vw"
-            quality={100}
+            quality={90}
             priority
             className="object-cover"
+            onError={() => handleImageError('hero')}
           />
           <div className="absolute inset-0 bg-black bg-opacity-40" />
         </div>
@@ -57,12 +67,22 @@ export default function Home() {
                     src={work.image}
                     alt={work.title}
                     fill
-                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className={`object-cover transition-opacity duration-300 ${
+                      imageError[work.id] ? 'opacity-0' : 'opacity-100'
+                    }`}
+                    quality={85}
+                    onError={() => handleImageError(work.id)}
                   />
+                  {imageError[work.id] && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                      <p className="text-gray-500 text-sm">Image coming soon</p>
+                    </div>
+                  )}
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{work.title}</h3>
-                  <p className="text-gray-600 mb-4">{work.description}</p>
+                  <p className="text-gray-600 mb-4 line-clamp-3">{work.description}</p>
                   <Link
                     href="/artworks"
                     className="text-gray-900 font-medium hover:text-gray-600 transition-colors"
@@ -97,8 +117,18 @@ export default function Home() {
                 src={siteContent.about.image}
                 alt="RiKU Ceramics Workshop"
                 fill
-                className="object-cover rounded-lg"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className={`object-cover rounded-lg transition-opacity duration-300 ${
+                  imageError['about'] ? 'opacity-0' : 'opacity-100'
+                }`}
+                quality={85}
+                onError={() => handleImageError('about')}
               />
+              {imageError['about'] && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+                  <p className="text-gray-500 text-sm">Image coming soon</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
