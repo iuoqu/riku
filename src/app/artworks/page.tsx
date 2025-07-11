@@ -20,7 +20,7 @@ interface Artwork {
 export default function Artworks() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  const categories = ['all', 'vases', 'tea-sets', 'sculptures', 'plates'];
+  const categories = ['all', 'Coffee Mugs', 'Tea Cup Sets', 'Espresso Cups', 'Decoration'];
   const artworks: Artwork[] = artworksData;
 
   const filteredArtworks = selectedCategory === 'all'
