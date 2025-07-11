@@ -18,8 +18,10 @@ export default function Home() {
             src={siteContent.hero.image}
             alt="RiKU Ceramics Hero"
             fill
-            className="object-cover"
+            sizes="100vw"
+            quality={100}
             priority
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-40" />
         </div>
