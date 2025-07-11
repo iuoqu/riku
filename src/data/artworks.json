@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Ethereal Vase I",
+    "category": "vases",
+    "image": "/images/artworks/vases/vase-1.jpg",
+    "description": "A delicate porcelain vase with ethereal blue glazes",
+    "dimensions": "H: 30cm, W: 15cm",
+    "price": "$1,200",
+    "available": true,
+    "featured": true,
+    "dateCreated": "2024-01-15"
+  },
+  {
+    "id": 2,
+    "title": "Traditional Tea Set",
+    "category": "tea-sets",
+    "image": "/images/artworks/tea-sets/tea-set-1.jpg",
+    "description": "Complete tea ceremony set with contemporary elements",
+    "dimensions": "Various sizes",
+    "price": "$2,500",
+    "available": true,
+    "featured": true,
+    "dateCreated": "2024-01-10"
+  },
+  {
+    "id": 3,
+    "title": "Abstract Form I",
+    "category": "sculptures",
+    "image": "/images/artworks/sculptures/sculpture-1.jpg",
+    "description": "Modern abstract sculpture exploring organic forms",
+    "dimensions": "H: 45cm, W: 20cm, D: 20cm",
+    "price": "$3,800",
+    "available": true,
+    "featured": false,
+    "dateCreated": "2024-01-05"
+  },
+  {
+    "id": 4,
+    "title": "Dining Collection",
+    "category": "plates",
+    "image": "/images/artworks/plates/plates-1.jpg",
+    "description": "Set of 6 handcrafted dining plates",
+    "dimensions": "D: 28cm",
+    "price": "$1,800",
+    "available": false,
+    "featured": false,
+    "dateCreated": "2023-12-20"
+  }
+] 

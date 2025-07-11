@@ -1,27 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import artworksData from '@/data/artworks.json';
+import siteContent from '@/data/siteContent.json';
 
 export default function Home() {
-  const featuredWorks = [
-    {
-      id: 1,
-      title: 'Ethereal Vase Collection',
-      image: '/images/vase-1.jpg',
-      description: 'A series of delicate porcelain vases with ethereal glazes',
-    },
-    {
-      id: 2,
-      title: 'Tea Ceremony Set',
-      image: '/images/tea-set.jpg',
-      description: 'Traditional tea ceremony set with contemporary elements',
-    },
-    {
-      id: 3,
-      title: 'Abstract Sculptures',
-      image: '/images/sculpture.jpg',
-      description: 'Modern abstract sculptures exploring form and texture',
-    },
-  ];
+  // Get featured works from JSON data
+  const featuredWorks = artworksData
+    .filter(artwork => artwork.featured)
+    .slice(0, siteContent.featuredSection.showCount);
 
   return (
     <div>
@@ -29,7 +15,7 @@ export default function Home() {
       <section className="relative h-screen">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero.jpg"
+            src={siteContent.hero.image}
             alt="RiKU Ceramics Hero"
             fill
             className="object-cover"
@@ -40,16 +26,16 @@ export default function Home() {
         <div className="relative h-full flex items-center justify-center text-center text-white">
           <div className="max-w-3xl px-4">
             <h1 className="text-5xl md:text-6xl font-serif mb-6">
-              RiKU Ceramics
+              {siteContent.hero.title}
             </h1>
             <p className="text-xl md:text-2xl mb-8">
-              Where tradition meets contemporary design in porcelain artistry
+              {siteContent.hero.subtitle}
             </p>
             <Link
               href="/artworks"
               className="inline-block bg-white text-gray-900 px-8 py-3 rounded-md hover:bg-gray-100 transition-colors"
             >
-              Explore Our Collection
+              {siteContent.hero.buttonText}
             </Link>
           </div>
         </div>
@@ -59,7 +45,7 @@ export default function Home() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-serif text-center mb-12">
-            Featured Works
+            {siteContent.featuredSection.title}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredWorks.map((work) => (
@@ -93,11 +79,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-serif mb-6">About RiKU Ceramics</h2>
+              <h2 className="text-3xl font-serif mb-6">{siteContent.about.title}</h2>
               <p className="text-gray-600 mb-6">
-                RiKU Ceramics is dedicated to creating exceptional porcelain pieces that honor traditional
-                craftsmanship while embracing modern aesthetics. Each piece is carefully handcrafted,
-                ensuring the highest quality and attention to detail.
+                {siteContent.about.description}
               </p>
               <Link
                 href="/contact"
@@ -108,7 +92,7 @@ export default function Home() {
             </div>
             <div className="relative h-96">
               <Image
-                src="/images/workshop.jpg"
+                src={siteContent.about.image}
                 alt="RiKU Ceramics Workshop"
                 fill
                 className="object-cover rounded-lg"

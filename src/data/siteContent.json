@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "title": "RiKU Ceramics",
+    "subtitle": "Where tradition meets contemporary design in porcelain artistry",
+    "buttonText": "Explore Our Collection",
+    "image": "/images/hero/hero.jpg"
+  },
+  "about": {
+    "title": "About RiKU Ceramics",
+    "description": "RiKU Ceramics is dedicated to creating exceptional porcelain pieces that honor traditional craftsmanship while embracing modern aesthetics. Each piece is carefully handcrafted, ensuring the highest quality and attention to detail.",
+    "image": "/images/gallery/workshop.jpg"
+  },
+  "contact": {
+    "email": "info@rikuceramics.com",
+    "phone": "+1 (555) 123-4567",
+    "location": "New York, NY",
+    "galleryImage": "/images/gallery/gallery.jpg"
+  },
+  "featuredSection": {
+    "title": "Featured Works",
+    "showCount": 3
+  }
+} 

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import artworksData from '@/data/artworks.json';
 
 interface Artwork {
   id: number;
@@ -11,52 +12,16 @@ interface Artwork {
   description: string;
   dimensions: string;
   price: string;
+  available: boolean;
+  featured: boolean;
+  dateCreated: string;
 }
 
 export default function Artworks() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  const categories = ['all', 'vases', 'tea sets', 'sculptures', 'plates'];
-
-  const artworks: Artwork[] = [
-    {
-      id: 1,
-      title: 'Ethereal Vase I',
-      category: 'vases',
-      image: '/images/vase-1.jpg',
-      description: 'A delicate porcelain vase with ethereal blue glazes',
-      dimensions: 'H: 30cm, W: 15cm',
-      price: '$1,200',
-    },
-    {
-      id: 2,
-      title: 'Traditional Tea Set',
-      category: 'tea sets',
-      image: '/images/tea-set-1.jpg',
-      description: 'Complete tea ceremony set with contemporary elements',
-      dimensions: 'Various sizes',
-      price: '$2,500',
-    },
-    {
-      id: 3,
-      title: 'Abstract Form I',
-      category: 'sculptures',
-      image: '/images/sculpture-1.jpg',
-      description: 'Modern abstract sculpture exploring organic forms',
-      dimensions: 'H: 45cm, W: 20cm, D: 20cm',
-      price: '$3,800',
-    },
-    {
-      id: 4,
-      title: 'Dining Collection',
-      category: 'plates',
-      image: '/images/plates-1.jpg',
-      description: 'Set of 6 handcrafted dining plates',
-      dimensions: 'D: 28cm',
-      price: '$1,800',
-    },
-    // Add more artworks as needed
-  ];
+  const categories = ['all', 'vases', 'tea-sets', 'sculptures', 'plates'];
+  const artworks: Artwork[] = artworksData;
 
   const filteredArtworks = selectedCategory === 'all'
     ? artworks
