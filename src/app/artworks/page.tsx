@@ -4,6 +4,9 @@ import { useState } from 'react';
 import Image from 'next/image';
 import artworksData from '@/data/artworks.json';
 
+// Debug log
+console.log('Loaded artworks data:', artworksData);
+
 interface Artwork {
   id: string;
   title: string;
