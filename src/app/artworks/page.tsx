@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import artworksData from '@/data/artworks.json';
 
 // Debug log
@@ -67,11 +68,11 @@ export default function Artworks() {
         {/* Artworks Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredArtworks.map((artwork) => (
-            <div key={artwork.id} className="bg-white rounded-lg overflow-hidden shadow-lg">
+            <article key={artwork.id} className="bg-white rounded-lg overflow-hidden shadow-lg" itemScope itemType="https://schema.org/Product">
               <div className="relative h-80">
                 <Image
                   src={artwork.image}
-                  alt={artwork.title}
+                  alt={`${artwork.title} - Handcrafted ${artwork.category.toLowerCase()} made from Jingdezhen porcelain, ${artwork.price}`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className={`object-cover transition-opacity duration-300 ${
@@ -80,33 +81,61 @@ export default function Artworks() {
                   priority={artwork.featured}
                   quality={85}
                   onError={() => handleImageError(artwork.id)}
+                  itemProp="image"
                 />
                 {imageError[artwork.id] && (
                   <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
                     <p className="text-gray-500 text-sm">Image coming soon</p>
                   </div>
                 )}
+                {artwork.featured && (
+                  <div className="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                    Featured
+                  </div>
+                )}
               </div>
               <div className="p-6">
-                <h2 className="text-xl font-semibold mb-2">{artwork.title}</h2>
-                <p className="text-gray-600 mb-4 line-clamp-3">{artwork.description}</p>
+                <h2 className="text-xl font-semibold mb-2" itemProp="name">{artwork.title}</h2>
+                <p className="text-sm text-gray-500 mb-2">
+                  <span itemProp="category">{artwork.category}</span> • 
+                  <span className="ml-1">Handcrafted Jingdezhen Porcelain</span>
+                </p>
+                <p className="text-gray-600 mb-4 line-clamp-3" itemProp="description">{artwork.description}</p>
                 <div className="space-y-2 text-sm text-gray-500">
-                  {artwork.dimensions && <p>Dimensions: {artwork.dimensions}</p>}
-                  {artwork.price && <p>Price: {artwork.price}</p>}
+                  {artwork.dimensions && (
+                    <p itemProp="size">
+                      <span className="font-medium">Dimensions:</span> {artwork.dimensions}
+                    </p>
+                  )}
+                  <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
+                    <p className="text-lg font-semibold text-gray-900">
+                      <span itemProp="price">{artwork.price}</span>
+                      <meta itemProp="priceCurrency" content="USD" />
+                    </p>
+                    <meta itemProp="availability" content={artwork.available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"} />
+                  </div>
                   {artwork.available ? (
-                    <p className="text-green-600">Available</p>
+                    <p className="text-green-600 font-medium">✓ Available</p>
                   ) : (
-                    <p className="text-red-600">Sold Out</p>
+                    <p className="text-red-600 font-medium">Sold Out</p>
                   )}
                 </div>
-                <button
-                  className="mt-4 w-full bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors"
-                  onClick={() => window.location.href = '/contact'}
-                >
-                  Inquire About This Piece
-                </button>
+                <div className="mt-4 space-y-2">
+                  <Link
+                    href={`/artworks/${artwork.id.toLowerCase()}`}
+                    className="block w-full bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors text-center"
+                  >
+                    View Details
+                  </Link>
+                  <button
+                    className="w-full border border-gray-900 text-gray-900 px-4 py-2 rounded-md hover:bg-gray-50 transition-colors"
+                    onClick={() => window.location.href = '/contact'}
+                  >
+                    Contact About This Piece
+                  </button>
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
