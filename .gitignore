@@ -30,4 +30,42 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts 
+next-env.d.ts
+
+# Image optimization backups (shouldn't be tracked)
+*.original.jpg
+*.original.JPG
+*.original.jpeg
+*.original.JPEG
+*.original.png
+*.original.PNG
+*.original.webp
+*.original.WEBP
+
+# Optimization script artifacts
+compress-images.bat
+optimize-*.log
+
+# OS generated files
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Log files
+*.log 
