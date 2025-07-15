@@ -78,7 +78,7 @@ export default function Home() {
             </header>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {featuredWorks.map((work) => (
-                <article key={work.id} className="bg-white rounded-lg overflow-hidden shadow-lg" itemScope itemType="https://schema.org/Product">
+                <article key={work.id} className="bg-white rounded-lg overflow-hidden shadow-lg">
                   <div className="relative h-64">
                     <Image
                       src={work.image}
@@ -90,7 +90,6 @@ export default function Home() {
                       }`}
                       quality={85}
                       onError={() => handleImageError(work.id)}
-                      itemProp="image"
                     />
                     {imageError[work.id] && (
                       <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
@@ -99,14 +98,14 @@ export default function Home() {
                     )}
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2" itemProp="name">{work.title}</h3>
+                    <h3 className="text-xl font-semibold mb-2">{work.title}</h3>
                     <p className="text-gray-600 mb-2">
-                      <span itemProp="category">{work.category}</span> • 
-                      <span className="ml-1" itemProp="offers" itemScope itemType="https://schema.org/Offer">
-                        <span itemProp="price">{work.price}</span>
+                      <span>{work.category}</span> • 
+                      <span className="ml-1">
+                        <span>{work.price}</span>
                       </span>
                     </p>
-                    <p className="text-gray-600 mb-4 line-clamp-3" itemProp="description">{work.description}</p>
+                    <p className="text-gray-600 mb-4 line-clamp-3">{work.description}</p>
                     <Link
                       href="/artworks"
                       className="text-gray-900 font-medium hover:text-gray-600 transition-colors"

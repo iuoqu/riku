@@ -68,7 +68,7 @@ export default function Artworks() {
         {/* Artworks Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredArtworks.map((artwork) => (
-            <article key={artwork.id} className="bg-white rounded-lg overflow-hidden shadow-lg" itemScope itemType="https://schema.org/Product">
+            <article key={artwork.id} className="bg-white rounded-lg overflow-hidden shadow-lg">
               <div className="relative h-80">
                 <Image
                   src={artwork.image}
@@ -81,7 +81,6 @@ export default function Artworks() {
                   priority={artwork.featured}
                   quality={85}
                   onError={() => handleImageError(artwork.id)}
-                  itemProp="image"
                 />
                 {imageError[artwork.id] && (
                   <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
@@ -95,24 +94,22 @@ export default function Artworks() {
                 )}
               </div>
               <div className="p-6">
-                <h2 className="text-xl font-semibold mb-2" itemProp="name">{artwork.title}</h2>
+                <h2 className="text-xl font-semibold mb-2">{artwork.title}</h2>
                 <p className="text-sm text-gray-500 mb-2">
-                  <span itemProp="category">{artwork.category}</span> • 
+                  <span>{artwork.category}</span> • 
                   <span className="ml-1">Handcrafted Jingdezhen Porcelain</span>
                 </p>
-                <p className="text-gray-600 mb-4 line-clamp-3" itemProp="description">{artwork.description}</p>
+                <p className="text-gray-600 mb-4 line-clamp-3">{artwork.description}</p>
                 <div className="space-y-2 text-sm text-gray-500">
                   {artwork.dimensions && (
-                    <p itemProp="size">
+                    <p>
                       <span className="font-medium">Dimensions:</span> {artwork.dimensions}
                     </p>
                   )}
-                  <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
+                  <div>
                     <p className="text-lg font-semibold text-gray-900">
-                      <span itemProp="price">{artwork.price}</span>
-                      <meta itemProp="priceCurrency" content="USD" />
+                      <span>{artwork.price}</span>
                     </p>
-                    <meta itemProp="availability" content={artwork.available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"} />
                   </div>
                   {artwork.available ? (
                     <p className="text-green-600 font-medium">✓ Available</p>

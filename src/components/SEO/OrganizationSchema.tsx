@@ -28,37 +28,7 @@ export default function OrganizationSchema() {
       "name": "RiKU" // Replace with actual founder name if you want
     },
     "foundingDate": "2024", // Replace with actual founding date
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Handcrafted Ceramic Collection",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Handcrafted Tea Cups",
-            "category": "Tea Cup Sets"
-          }
-        },
-        {
-          "@type": "Offer", 
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Handcrafted Coffee Mugs",
-            "category": "Coffee Mugs"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product", 
-            "name": "Ceramic Decorative Pieces",
-            "category": "Decoration"
-          }
-        }
-      ]
-    }
+    "areaServed": "Worldwide"
   };
 
   return (

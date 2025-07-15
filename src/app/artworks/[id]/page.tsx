@@ -87,21 +87,19 @@ export default function ProductPage({ params }: Props) {
             </div>
 
             {/* Product Information */}
-            <div className="space-y-6" itemScope itemType="https://schema.org/Product">
+            <div className="space-y-6">
               <div>
-                <h1 className="text-3xl lg:text-4xl font-serif mb-4" itemProp="name">
+                <h1 className="text-3xl lg:text-4xl font-serif mb-4">
                   {product.title}
                 </h1>
                 <p className="text-lg text-gray-600 mb-2">
-                  <span itemProp="category">{product.category}</span> • 
+                  <span>{product.category}</span> • 
                   <span className="ml-1">Handcrafted Jingdezhen Porcelain</span>
                 </p>
-                <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
+                <div>
                   <p className="text-2xl font-bold text-gray-900">
-                    <span itemProp="price">{product.price}</span>
-                    <meta itemProp="priceCurrency" content="USD" />
+                    {product.price}
                   </p>
-                  <meta itemProp="availability" content={product.available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"} />
                 </div>
               </div>
 
