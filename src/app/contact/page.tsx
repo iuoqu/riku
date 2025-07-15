@@ -12,10 +12,10 @@ export default function Contact() {
           <div className="bg-white p-8 rounded-lg shadow-lg text-center">
             <div className="relative h-64 mb-8 rounded-lg overflow-hidden">
               <Image
-                src="/images/gallery.jpg"
-                alt="RiKU Ceramics Gallery"
+                src="/logo.png"
+                alt="RiKU Ceramics Logo"
                 fill
-                className="object-cover"
+                className="object-contain bg-white p-8"
               />
             </div>
 
