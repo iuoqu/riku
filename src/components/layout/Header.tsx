@@ -11,6 +11,7 @@ export default function Header() {
     { label: 'Artworks', href: '/artworks' },
     { label: 'About', href: '/about' },
     { label: 'FAQ', href: '/faq' },
+    { label: 'Returns', href: '/returns' },
     { label: 'Contact', href: '/contact' },
   ];
 

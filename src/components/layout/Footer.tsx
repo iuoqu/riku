@@ -27,6 +27,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/returns" className="text-gray-600 hover:text-gray-900">
+                  Returns & Exchanges
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-gray-600 hover:text-gray-900">
                   Contact
                 </Link>

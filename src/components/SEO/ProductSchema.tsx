@@ -79,11 +79,20 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
       },
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
+        "applicableCountry": ["US", "CA", "GB", "AU"],
         "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
         "merchantReturnDays": 30,
         "returnMethod": "https://schema.org/ReturnByMail",
-        "returnFees": "https://schema.org/FreeReturn"
+        "returnFees": "https://schema.org/FreeReturn",
+        "merchantReturnLink": "https://rikuceramics.com/returns",
+        "name": "30-Day Return Policy",
+        "description": "We offer a 30-day return policy for all handcrafted ceramic pieces. Items must be returned in original condition.",
+        "inStoreReturnsOffered": false,
+        "restockingFee": {
+          "@type": "MonetaryAmount",
+          "value": 0,
+          "currency": "USD"
+        }
       }
     },
     "aggregateRating": {
