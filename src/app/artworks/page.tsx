@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import artworksData from '@/data/artworks.json';
+import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema';
 
 // Debug log
 console.log('Loaded artworks data:', artworksData);
@@ -37,7 +38,14 @@ export default function Artworks() {
   };
 
   return (
-    <div className="py-12">
+    <>
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://rikuceramics.com" },
+          { name: "Our Collection", url: "https://rikuceramics.com/artworks" }
+        ]} 
+      />
+      <div className="py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-serif text-center mb-12">Our Collection</h1>
 
@@ -137,5 +145,6 @@ export default function Artworks() {
         </div>
       </div>
     </div>
+    </>
   );
 } 

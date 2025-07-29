@@ -26,18 +26,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : `Handcrafted ${product.category.toLowerCase()} from Jingdezhen porcelain. ${product.title} - ${product.price}`;
 
   return {
-    title: `${product.title} | ${product.category} | RiKU Ceramics`,
+    title: `${product.title} | Handcrafted ${product.category} | RiKU Ceramics`,
     description: metaDescription.length > 160 
       ? metaDescription.substring(0, 157) + '...'
       : metaDescription,
-    keywords: `${product.title}, ${product.category.toLowerCase()}, handcrafted ceramics, Jingdezhen porcelain, ceramic ${product.category.toLowerCase()}, artisan pottery, ${product.price}`,
+    keywords: `${product.title}, ${product.category.toLowerCase()}, handcrafted ceramics, Jingdezhen porcelain, ceramic ${product.category.toLowerCase()}, artisan pottery, ${product.price}, Chinese ceramics`,
     openGraph: {
-      title: `${product.title} | RiKU Ceramics`,
+      title: `${product.title} | Handcrafted ${product.category} | RiKU Ceramics`,
       description: metaDescription,
       type: 'website',
+      url: `https://rikuceramics.com/artworks/${product.id.toLowerCase()}`,
       images: [
         {
-          url: `https://rikuceramics.com${product.image}`, // Replace with actual domain
+          url: `https://rikuceramics.com${product.image}`,
           width: 800,
           height: 600,
           alt: `${product.title} - Handcrafted ${product.category.toLowerCase()} from Jingdezhen porcelain`,
@@ -46,9 +47,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${product.title} | RiKU Ceramics`,
+      title: `${product.title} | Handcrafted ${product.category} | RiKU Ceramics`,
       description: metaDescription,
-      images: [`https://rikuceramics.com${product.image}`], // Replace with actual domain
+      images: [`https://rikuceramics.com${product.image}`],
+    },
+    alternates: {
+      canonical: `https://rikuceramics.com/artworks/${product.id.toLowerCase()}`,
     },
   };
 }

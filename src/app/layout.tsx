@@ -8,7 +8,10 @@ import GoogleAnalytics from '@/components/Analytics/GoogleAnalytics';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'RiKU Ceramics | Handcrafted Jingdezhen Porcelain Tea Cups & Coffee Mugs',
+  title: {
+    default: 'RiKU Ceramics | Handcrafted Jingdezhen Porcelain Tea Cups & Coffee Mugs',
+    template: '%s | RiKU Ceramics'
+  },
   description: 'Discover unique handcrafted porcelain pieces from Jingdezhen, China. Premium ceramic tea cups, coffee mugs, and artisan pottery. Each piece individually crafted using traditional techniques.',
   keywords: 'handcrafted ceramics, Jingdezhen porcelain, ceramic tea cups, handmade coffee mugs, artisan pottery, Chinese ceramics, porcelain art, handthrown pottery, ceramic gifts',
   authors: [{ name: 'RiKU Ceramics' }],
@@ -28,6 +31,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'RiKU Ceramics',
+    url: 'https://rikuceramics.com',
   },
   twitter: {
     card: 'summary_large_image',
@@ -44,6 +48,9 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  alternates: {
+    canonical: 'https://rikuceramics.com',
   },
 };
 

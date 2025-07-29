@@ -1,13 +1,22 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Handcrafted Ceramic Collection | RiKU Ceramics Artworks',
-  description: 'Browse our complete collection of handcrafted ceramic artworks. Unique porcelain tea cups, coffee mugs, and decorative pieces from Jingdezhen, China. Each piece individually crafted by skilled artisans.',
-  keywords: 'ceramic collection, handcrafted pottery, Jingdezhen ceramics, porcelain tea cups, coffee mugs, ceramic art gallery, artisan ceramics',
+  title: 'Our Collection | Handcrafted Jingdezhen Porcelain Ceramics',
+  description: 'Explore our complete collection of handcrafted Jingdezhen porcelain ceramics. Tea cups, coffee mugs, decorative pieces, and artisan pottery. Each piece individually crafted using traditional Chinese techniques.',
+  keywords: 'ceramic collection, Jingdezhen porcelain, handcrafted ceramics, tea cups, coffee mugs, artisan pottery, Chinese ceramics, porcelain art, ceramic gifts, handthrown pottery',
   openGraph: {
-    title: 'Handcrafted Ceramic Collection | RiKU Ceramics',
-    description: 'Browse our complete collection of handcrafted ceramic artworks from Jingdezhen, China.',
+    title: 'Our Collection | RiKU Ceramics',
+    description: 'Explore our complete collection of handcrafted Jingdezhen porcelain ceramics. Tea cups, coffee mugs, decorative pieces, and artisan pottery.',
     type: 'website',
+    url: 'https://rikuceramics.com/artworks',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Our Collection | RiKU Ceramics',
+    description: 'Explore our complete collection of handcrafted Jingdezhen porcelain ceramics. Tea cups, coffee mugs, decorative pieces, and artisan pottery.',
+  },
+  alternates: {
+    canonical: 'https://rikuceramics.com/artworks',
   },
 };
 

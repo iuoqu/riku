@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import artworksData from '@/data/artworks.json';
 import ProductSchema from '@/components/SEO/ProductSchema';
+import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema';
 
 interface Props {
   params: {
@@ -37,6 +38,14 @@ export default function ProductPage({ params }: Props) {
   return (
     <>
       <ProductSchema product={product} />
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://rikuceramics.com" },
+          { name: "Our Collection", url: "https://rikuceramics.com/artworks" },
+          { name: product.category, url: `https://rikuceramics.com/artworks?category=${encodeURIComponent(product.category)}` },
+          { name: product.title, url: `https://rikuceramics.com/artworks/${product.id.toLowerCase()}` }
+        ]} 
+      />
       
       <div className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
